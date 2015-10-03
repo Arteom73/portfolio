@@ -1,0 +1,258 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Свободный верстальщик</title>
+	<link rel="icon" type="image/png" href="./images/favicon.png" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" id="viewport" content="width=device-width">
+    <meta name="cmsmagazine" content="9fd15f69c95385763dcf768ea3b67e22" />
+
+    <!--[if lt IE 9]><script src="/js/vendor/html5shiv.js"></script><![endif]-->
+    <script>
+        var appConfig = {
+            'mobileVersion':false,
+            'desktopVersion':true,
+            'startupMessage':{
+                'title':false,
+                'message':false
+            }
+        };
+        (function(){var a,b,c,d,e,f,g,h,i,j;a=window.device,window.device={},c=window.document.documentElement,j=window.navigator.userAgent.toLowerCase(),device.ios=function(){return device.iphone()||device.ipod()||device.ipad()},device.iphone=function(){return d("iphone")},device.ipod=function(){return d("ipod")},device.ipad=function(){return d("ipad")},device.android=function(){return d("android")},device.androidPhone=function(){return device.android()&&d("mobile")},device.androidTablet=function(){return device.android()&&!d("mobile")},device.blackberry=function(){return d("blackberry")||d("bb10")||d("rim")},device.blackberryPhone=function(){return device.blackberry()&&!d("tablet")},device.blackberryTablet=function(){return device.blackberry()&&d("tablet")},device.windows=function(){return d("windows")},device.windowsPhone=function(){return device.windows()&&d("phone")},device.windowsTablet=function(){return device.windows()&&d("touch")&&!device.windowsPhone()},device.fxos=function(){return(d("(mobile;")||d("(tablet;"))&&d("; rv:")},device.fxosPhone=function(){return device.fxos()&&d("mobile")},device.fxosTablet=function(){return device.fxos()&&d("tablet")},device.meego=function(){return d("meego")},device.cordova=function(){return window.cordova&&"file:"===location.protocol},device.nodeWebkit=function(){return"object"==typeof window.process},device.mobile=function(){return device.androidPhone()||device.iphone()||device.ipod()||device.windowsPhone()||device.blackberryPhone()||device.fxosPhone()||device.meego()},device.tablet=function(){return device.ipad()||device.androidTablet()||device.blackberryTablet()||device.windowsTablet()||device.fxosTablet()},device.desktop=function(){return!device.tablet()&&!device.mobile()},device.portrait=function(){return window.innerHeight/window.innerWidth>1},device.landscape=function(){return window.innerHeight/window.innerWidth<1},device.noConflict=function(){return window.device=a,this},d=function(a){return-1!==j.indexOf(a)},f=function(a){var b;return b=new RegExp(a,"i"),c.className.match(b)},b=function(a){return f(a)?void 0:c.className+=" "+a},h=function(a){return f(a)?c.className=c.className.replace(a,""):void 0},device.ios()?device.ipad()?b("ios ipad tablet"):device.iphone()?b("ios iphone mobile"):device.ipod()&&b("ios ipod mobile"):b(device.android()?device.androidTablet()?"android tablet":"android mobile":device.blackberry()?device.blackberryTablet()?"blackberry tablet":"blackberry mobile":device.windows()?device.windowsTablet()?"windows tablet":device.windowsPhone()?"windows mobile":"desktop":device.fxos()?device.fxosTablet()?"fxos tablet":"fxos mobile":device.meego()?"meego mobile":device.nodeWebkit()?"node-webkit":"desktop"),device.cordova()&&b("cordova"),e=function(){return device.landscape()?(h("portrait"),b("landscape")):(h("landscape"),b("portrait"))},i="onorientationchange"in window,g=i?"orientationchange":"resize",window.addEventListener?window.addEventListener(g,e,!1):window.attachEvent?window.attachEvent(g,e):window[g]=e,e()}).call(this);
+        (function(a,d,vp){
+            var w=screen.width,h=screen.height;
+            if (w<a || h<a || device.mobile()) {
+                document.getElementById(vp).setAttribute('content','width='+a+', user-scalable=no');
+                appConfig.mobileVersion = true;
+            } else {
+                document.getElementById(vp).setAttribute('content','width='+d);
+            }
+            appConfig.desktopVersion = !appConfig.mobileVersion;
+        })(640,1100,'viewport');
+    </script>
+	<link href="styles/reset.css" rel="stylesheet" />
+	<link href="styles/style.css" rel="stylesheet" />
+	<link href="fonts/fonts.css" rel="stylesheet" />
+	<!--[if lt IE 9]>
+		<script src="./js/html5shiv.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<header class="header">
+		<div class="wrap">
+			<h1 class="logotype lcol">
+				<b>Свободный</b> верстальщик
+			</h1>
+			<nav class="menu rcol">
+				<ul>
+					<li><a href="#services" class="scroll-link">Услуги</a></li>
+					<li><a href="#benefits" class="scroll-link">Преимущества</a></li>
+					<li><a href="#examples" class="scroll-link">Примеры</a></li>
+					<li><a href="#reviews" class="scroll-link">Отзывы</a></li>
+					<li><a href="#contacts" class="scroll-link">Контакты</a></li>
+				</ul>
+			</nav>
+			<div class="clearfix"></div>
+		</div>
+	</header>
+	<section class="firstScreen">
+		<div class="wrap">
+			<div class="title">
+				<b>Овчинников Артем</b>
+				Свободный верстальщик
+			</div>
+			<div class="orderButton">
+				<a href="#order" class="scrollMenu">Заказать верстку</a>
+			</div>
+		</div>
+	</section>
+	<section class="section _background" id="services">
+		<div class="wrap">
+			<h2 class="mainTitle">
+				<span>
+					Наши <span>услуги</span>
+				</span>
+			</h2>
+			<div class="doing">
+				<article>
+					<div class="poster">
+						<img src="./images/doing/html5css3.png" alt="HTML5/CSS верстка" />
+					</div>
+					<h3>HTML5/CSS3 верстка</h3>
+					<p>
+						Современные технологии позволяют сократить скорость загрузки страниц
+					</p>
+				</article>
+				<article>
+					<div class="poster">
+						<img src="./images/doing/responsive.png" alt="Адаптивный дизайн" />
+					</div>
+					<h3>Адаптивный дизайн</h3>
+					<p>
+						Дизайн легко адаптируется под различные типы устройств
+					</p>
+				</article>
+				<article>
+					<div class="poster">
+						<img src="./images/doing/js.png" alt="JS/Jquery" />
+					</div>
+					<h3>JS/Jquery</h3>
+					<p>
+						Профессиональное создание скриптов любой сложности
+					</p>
+				</article>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</section>
+	<section class="section" id="benefits">
+		<div class="wrap">
+			<h2 class="mainTitle">
+				<span>
+					Наши <span>преимущества</span>
+				</span>
+			</h2>
+			<div class="get">
+				<article>
+					<h3><span>Семантическая верстка</span></h3>
+					<p>
+						А вот по мнению аналитиков селекция бренда подсознательно оправдывает.
+					</p>
+				</article>
+				<article>
+					<h3><span>Валидная верстка</span></h3>
+					<p>
+						А вот по мнению аналитиков селекция бренда подсознательно оправдывает.
+					</p>
+				</article>
+				<article>
+					<h3><span>Кроссбраузерная верстка</span></h3>
+					<p>
+						А вот по мнению аналитиков селекция бренда подсознательно оправдывает.
+					</p>
+				</article>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</section>
+	<section class="section _background" id="examples">
+		<div class="wrap">
+			<h2 class="mainTitle">
+				<span>
+					Примеры <span>работ</span>
+				</span>
+			</h2>
+			<div class="portfolio">
+				<div class="item">
+					<div class="inner">
+						<img src="./images/portfolio/1.jpg" alt="" />
+						<p>
+							Название
+						</p>
+					</div>
+				</div>
+				<div class="item">
+					<div class="inner">
+						<img src="./images/portfolio/2.jpg" alt="" />
+						<p>
+							<a href="#">Название</a>
+						</p>
+					</div>
+				</div>
+				<div class="item">
+					<div class="inner">
+						<img src="./images/portfolio/3.jpg" alt="" />
+						<p>
+							Название
+						</p>
+					</div>
+				</div>
+				<div class="item">
+					<div class="inner">
+						<img src="./images/portfolio/4.png" alt="" />
+						<p>
+							Название
+						</p>
+					</div>
+				</div>
+				<div class="item">
+					<div class="inner">
+						<img src="./images/portfolio/5.png" alt="" />
+						<p>
+							<a href="#">Название</a>
+						</p>
+					</div>
+				</div>
+				<div class="item">
+					<div class="inner">
+						<img src="./images/portfolio/6.jpg" alt="" />
+						<p>
+							Название
+						</p>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+				<div class="order-link">
+					<a href="#">Заказать у нас</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="contacts" id="contacts">
+		<div class="wrap">
+			<div class="list lcol">
+				<h3>Связь с <span>нами</span></h3>
+				<ul>
+					<li>
+						<i class="icon">
+							<img src="./images/icons/s.png" alt="" />
+						</i>
+						<span>Skype:</span>
+						arteom9573
+					</li>
+					<li>
+						<i class="icon">
+							<img src="./images/icons/v.png" alt="" />
+						</i>
+						<span>Вконтакте:</span>
+						<a href="#">vk.com/artem9573</a>
+					</li>
+					<li>
+						<i class="icon">
+							<img src="./images/icons/p.png" alt="" />
+						</i>
+						<span>Телефон:</span>
+						+7 894 564 68 12
+					</li>
+					<li>
+						<i class="icon">
+							<img src="./images/icons/m.png" alt="" />
+						</i>
+						<span>E-mail:</span>
+						artem9573@mail.ru
+					</li>
+				</ul>
+			</div>
+			<div class="form rcol">
+				<input class="text lcol" placeholder="Ваше имя" />
+				<input class="text rcol" placeholder="Ваш E-mail" />
+				<textarea class="text" placeholder="Текст"></textarea>
+				<input class="submit" type="submit" value="Задать вопрос" />
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</section>
+	<footer class="footer">
+		<div class="wrap">
+			<a class="top rcol" id="top" href="#top"></a>
+			<div class="text"><span><span>Свободный</span> Верстальщик. © 2015 </span> Все права защищены. </div>
+			<div class="clearfix"></div>
+		</div>
+	</footer>
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,800,700,600" rel="stylesheet">
+<script src="./js/jquery.js"></script>
+<script src="./js/smooth.scroll.js"></script>
+<script src="./js/script.js"></script>
+</body>
+</html>
