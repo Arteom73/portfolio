@@ -22,7 +22,10 @@ if (!$is_login) {
 			</div>
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="/">Home</a></li>
-				<?if($is_login){?><li><a href="?logout=YES">Logout</a></li><?}?>
+				<?if($is_login){?>
+					<li><a href="/admin/settings/">Settings</a></li>
+					<li><a href="?logout=YES">Logout</a></li>
+				<?}?>
 			</ul>
 		</div>
 	</nav>

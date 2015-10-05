@@ -4,7 +4,7 @@ session_start();
 
 $is_login = 0;
 
-if(isset($_POST['login']) && isset($_POST['password'])){
+if(isset($_POST['login']) && isset($_POST['password']) && isset($_POST['login_button'])){
 
 	$login = htmlspecialchars($_POST['login']);
 	$password = md5($_POST['password']);

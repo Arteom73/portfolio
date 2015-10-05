@@ -46,7 +46,7 @@ if ($is_login) {
 			</label>
 			<br>
 			<div class="btn-group">
-			<button class="btn btn-default">
+			<button class="btn btn-default" name="login_button">
 				<i class="glyphicon glyphicon-sunglasses"></i> Login
 			</button>
 			</div>
