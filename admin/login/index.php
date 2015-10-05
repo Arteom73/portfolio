@@ -2,7 +2,7 @@
 include_once($_SERVER['DOCUMENT_ROOT'] . '/include/init.php');
 
 if ($is_login) {
-	//header('Location: http://'.$_SERVER['HTTP_HOST'].'/admin/');
+	header('Location: http://'.$_SERVER['HTTP_HOST'].'/admin/');
 }
 ?>
 <!DOCTYPE html>

@@ -37,8 +37,8 @@ if(isset($_POST['login']) && isset($_POST['password'])){
 
 		if($_POST['remember']) {
 
-			setcookie('login', $login, time()+60*60*24*30); 
-			setcookie('login_hash', $hash, time()+60*60*24*30); 
+			setcookie('login', $login, time()+60*60*24*30, '/'); 
+			setcookie('login_hash', $hash, time()+60*60*24*30, '/'); 
 
 		} else {
 
@@ -92,8 +92,8 @@ if($_REQUEST['logout']) {
 
 	unset($_SESSION['login']);
 	unset($_SESSION['login_hash']);
-	unset($_COOKIE['login']); 
-	unset($_COOKIE['login_hash']);
+	setcookie('login', '', time()+60*60*24*30, '/'); 
+	setcookie('login_hash', '', time()+60*60*24*30, '/'); 
 	header('Location: http://' . $_SERVER['HTTP_HOST']); 
 	exit();
 
