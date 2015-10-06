@@ -21,7 +21,7 @@
 			$sql->bindParam(':date', $date);
 			$sql->bindParam(':ip', $ip);
 			if ($sql->execute()) {
-				$add_error = "Review added";
+				$add_error = 'Review added';
 			} else {
 				$add_error = "Error!";
 			}
@@ -37,7 +37,6 @@
 	}
 
 ?>
-
 
 <h1>Add review</h1>
 <br>
