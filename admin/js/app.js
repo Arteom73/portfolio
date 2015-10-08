@@ -1,7 +1,7 @@
 $(function() {
 		
 	// Ajax approve/disprove reviews
-	$('.js-approve-button').on('click', function(e) {
+	$(document).on('click', '.js-approve-button', function(e) {
 
 		e.preventDefault();
 
@@ -21,24 +21,30 @@ $(function() {
 	});
 
 	// Ajax edit review
-	$('.js-edit-button').on('click', function(e) {
+	$(document).on('click', '.js-edit-button', function(e) {
 
 		e.preventDefault();
 
 		$.ajax({
 
 			type: 'post',
-			url: '/admin/ajax/reviews_edit.php',
+			url: '/admin/ajax/reviews_form.php',
 			data: {
 				id: Number($(this).closest('.js-approve-item').data('id'))
 			},
+			dataType: 'json',
 			success: function(date) {
-				doModal('asd','asd','asd');
+				if (date.result == 1) {
+					doModal('', 'Review edit', date.html, 'updateReview('+date.id+')', 'asd');
+				} else {
+					alert('Error!');
+				}
 			}
 
-		})
+		});
 
 	});
+
 
 	function doModal(placementId, heading, formContent, strSubmitFunc, btnText) {
 	    html =  '<div id="dynamic-modal" class="modal fade in" style="display:none;">';
@@ -49,20 +55,19 @@ $(function() {
 	    html += '<h4>'+heading+'</h4>'
 	    html += '</div>';
 	    html += '<div class="modal-body">';
-	    html += '<p>';
 	    html += formContent;
 	    html += '</div>';
 	    html += '<div class="modal-footer">';
-	    if (btnText!='') {
+	    if (btnText) {
 	        html += '<span class="btn btn-success"';
 	        html += ' onClick="'+strSubmitFunc+'">'+btnText;
 	        html += '</span>';
 	    }
-	    html += '<span class="btn" data-dismiss="modal">x</span>'; // close button
-	    html += '</div>';  // footer
-	    html += '</div>';  // modalWindow
-	    html += '</div>';  // modalWindow
-	    html += '</div>';  // modalWindow
+	    html += '<span class="btn" data-dismiss="modal">Close</span>';
+	    html += '</div>';
+	    html += '</div>';
+	    html += '</div>';
+	    html += '</div>';
 	    $(html).appendTo($('body'));
 	    $("#dynamic-modal").modal();
 	    $("#dynamic-modal").on('hidden.bs.modal', function (e) {
@@ -70,3 +75,21 @@ $(function() {
 		});
 	}
 })
+
+var updateReview = function(id) {
+
+	$.ajax({
+		type: 'post',
+		url: '/admin/ajax/reviews_update.php',
+		data: $('#reviewUpdate').serialize() + '&id='+id,
+		dataType: 'json',
+		success: function(date) {
+			alert(date.message);
+			if (date.result == 1) {
+				$("#dynamic-modal").modal('hide');
+				$('#review-'+id).html(date.html);
+			}
+		}
+	})
+
+}
