@@ -1,0 +1,206 @@
+input[type=text], input[type=search], input[type=email], input[type=password], textarea{
+    width: 100%;
+    height: 32px;
+    background: #fff;
+    border:1px solid #171717;
+    padding:0 12px;
+    @include arialreg;
+    @include font(#353636, 11px, 32px);
+    @include box-sizing(border-box);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+
+    &::-webkit-input-placeholder {
+        @include arialreg;
+        color: #b1b1b1;
+        letter-spacing: 1px;
+    }
+    &:-moz-placeholder {
+        @include arialreg;
+        color: #b1b1b1;
+        letter-spacing: 1px;
+    }
+    &:-ms-input-placeholder {
+        @include arialreg;
+        color: #b1b1b1;
+        letter-spacing: 1px;
+    }
+    &.parsley-error {
+        border-color:#e9343c;
+    }
+}
+
+textarea {
+    resize: none;
+}
+
+button, input[type=submit], .btn {
+    @include arialreg;
+    @include font(#353535, 10px, 1);
+    padding: 10px 25px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border:2px solid #e9343c;
+    background:transparent;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+    @include transition(color 0.2s ease, background-color 0.2s ease);
+
+    overflow: hidden;
+    position: relative;
+    margin-top: 15px;
+    &:before {
+        width: 100%;
+        height: 100%;
+        content:'';
+        position: absolute;
+        top:100%;
+        left:0;
+        background-color: #e9343c;
+        @include transition(top 0.2s ease);
+        z-index: -1;
+    }
+    &:hover {
+        text-decoration: none;
+        color:#fff;
+        &:before {
+            top:0;
+        }
+    }
+    &:disabled, &.disabled {
+        background: #f2f2f2;
+        border-color:#f2f2f2;
+        color:#8f9292;
+    }
+    /*&:active {
+        background-color: #b4282e;
+    }*/
+
+    &:visited {
+        color:#353535;
+    }
+
+    &.small-btn {
+        height:24px;
+        line-height: 24px;
+        padding:0 18px;
+        font-size: 10px;
+    }
+}
+
+/*input[type=submit] {
+    &:hover {
+        background-color: #e9343c;
+    }
+    &:disabled {
+        &:hover {
+            background: #f2f2f2;
+        }
+    }
+}*/
+
+input[type=checkbox].css-checkbox, input[type=radio].css-checkbox {
+    display:none;
+}
+
+input[type=checkbox].css-checkbox + label.css-label,
+input[type=radio].css-checkbox + label.css-label {
+    padding-left:30px;
+    display:inline-block;
+    background-repeat:no-repeat;
+    vertical-align:middle;
+    cursor:pointer;
+}
+
+input[type=checkbox].css-checkbox + label.css-label {
+    &:before {
+        background-position: 0 0;
+    }
+    &:hover {
+        &:before {
+            background-position: 0 -40px;
+        }
+    }
+    &:active {
+        &:before {
+            background-position: 0 -20px;
+        }
+    }
+
+}
+
+input[type=radio].css-checkbox + label.css-label {
+    &:before {
+        background-position: -26px 0;
+    }
+    &:hover {
+        &:before {
+            background-position: -26px -40px;
+        }
+    }
+    &:active {
+        &:before {
+            background-position: -26px -20px;
+        }
+    }
+}
+
+input[type=checkbox].css-checkbox:checked + label.css-label {
+    &:before {
+        background-position: 0 -60px;
+    }
+    &:hover {
+        &:before {
+            background-position: 0 -60px;
+        }
+    }
+
+}
+input[type=checkbox].css-checkbox.checked + label.css-label {
+    &:before {
+        background-position: 0 -60px;
+    }
+    &:hover {
+        &:before {
+            background-position: 0 -60px;
+        }
+    }
+
+}
+
+input[type=radio].css-checkbox:checked + label.css-label,
+input[type=radio].css-checkbox.checked + label.css-label {
+    &:before, &:hover:before {
+        background-position: -26px -60px;
+    }
+}
+
+label.css-label {
+    @include arialreg;
+    @include font(#323131, 13px, 20px);
+    position: relative;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    &:before {
+        content:'';
+        position: absolute;
+        left:0;
+        top:2px;
+        width: 16px;
+        height: 17px;
+        background-image:url('/img/spr_checkboxes.png');
+    }
+}
+
+.common-form-cnt {
+    fieldset {
+        position: relative;
+        margin-bottom: 25px;
+    }
+}

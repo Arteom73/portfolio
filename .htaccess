@@ -1,0 +1,5 @@
+DirectoryIndex index.php
+
+RewriteEngine On
+
+RewriteRule ^preview/([^/]*)/$ preview/index.php?code=$1 [L]

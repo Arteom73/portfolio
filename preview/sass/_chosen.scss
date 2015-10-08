@@ -1,0 +1,59 @@
+$chosen-sprite: image-url('/img/spr_icons.png') !default;
+$chosen-sprite-retina: image-url('/css/plugins/chosen-sprite@2x.png') !default;
+.js-common-select {
+    &.chosen-container-single {
+        width: 99% !important;
+        .chosen-single {
+            @include border-radius(0);
+            @include box-shadow(none);
+            background: #fff;
+            border:1px solid #171717;
+            @include arialreg;
+            @include font($cBlack, 11px, 33px);
+            height: 33px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            div {
+                width: 36px;
+                b {
+                    width: 18px;
+                    height: 18px;
+                    margin: 8px;
+                    background: $chosen-sprite -37px -6px no-repeat;
+                }
+            }
+        }
+        .chosen-drop {
+            @include border-radius(0);
+            border:1px solid #e8e8e8;
+            @include box-shadow(none);
+            .chosen-results {
+                margin:0;
+                padding:0;
+                li {
+                    @include arialreg;
+                    @include font(#171717, 11px, 11px);
+                    letter-spacing: 1px;
+                    text-transform: uppercase;
+                    padding:10px 15px;
+                    &.highlighted {
+                        background: #f2f2f2;
+                    }
+                }
+            }
+        }
+    }
+    &.chosen-container-active {
+        &.chosen-with-drop {
+            .chosen-single {
+                background: #000;
+                color:$cWhite;
+                div {
+                    b {
+                        background-position: -37px -66px;
+                    }
+                }
+            }
+        }
+    }
+}

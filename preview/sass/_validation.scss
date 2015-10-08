@@ -1,0 +1,36 @@
+    ul.parsley-errors-list {
+        position: absolute;
+        z-index: 1;
+        top:-30px;
+        background: #171717;
+        list-style: none;
+        left:10px;
+        &.filled {
+            &:before {
+                content:'';
+                position: absolute;
+                bottom:-3px;
+                left:50%;
+                margin-left: -4px;
+                width: 0px;
+                height: 0px;
+                border-style: solid;
+                border-width: 3px 3px 0 3px;
+                border-color: #171717 transparent transparent transparent;
+            }
+        }
+        > li {
+            display: block;
+            color:#fff;
+            @include arialreg;
+            @include font(#fff, 9px, 1);
+            padding:8px 13px;
+            margin-bottom: 0;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            &:before {
+                display: none;
+            }
+        }
+    }

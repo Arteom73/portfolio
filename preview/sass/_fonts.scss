@@ -1,0 +1,26 @@
+
+@mixin arialreg {
+    font-family: Arial, sans-serif;
+    font-weight: normal;
+}
+
+@mixin arialbold {
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+}
+
+@mixin ptsans {
+    font-family: 'PT Sans', sans-serif;
+}
+
+@mixin ptsans-bold {
+    font-family: 'PT Sans', sans-serif;
+    font-weight: bold;
+}
+
+@mixin font($color: #000, $size: 14px, $lh: inherit){
+    font-size: $size;
+    color: $color;
+    line-height: $lh;
+};
+

@@ -18,6 +18,9 @@ foreach ($db->query($sql) as $row) {
     $html .= '<div class="panel-body js-edit-button">'.$row['message'].'</div>';
     $html .= '</div>';
 }
+if (!$html) {
+    $html = 'Reviews not found.<br>';
+}
 ?>
 
 <?=$html?>

@@ -1,0 +1,204 @@
+/*
+ * Image replacement
+ */
+
+.ir {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    /* IE 6/7 fallback */
+    *text-indent: -9999px;
+}
+
+.ir:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 150%;
+}
+
+/*
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+/*
+ * Hide visually and from screenreaders, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+
+.clearfix {
+    *zoom: 1;
+}
+
+#overlay, .bust-overlay{
+    position:absolute;
+    z-index:10; /*input is 10*/
+    display:none;
+    width:100%;
+    height:100%;
+    background:url('/img/bg_overlay.png') left top repeat;
+}
+.bust-overlay {
+    left:0;
+    top:0;
+    i {
+        width: 36px;
+        height: 36px;
+        position: absolute;
+        left:50%;
+        margin-left: -18px;
+        top:50%;
+        margin-top: -18px;
+        background: url('/img/preloader.gif') 0 0 no-repeat;
+    }
+}
+
+.wrapper {
+    width: $baseWidth;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.fleft {
+    float: left;
+}
+.fright {
+    float: right;
+}
+.aleft {
+    text-align: left;
+}
+.aright {
+    text-align: right;
+}
+.acenter {
+    text-align: center;
+}
+
+.row {
+    position: relative;
+    width: 100%;
+}
+
+.ib {
+    display: inline-block;
+    &.m {
+        vertical-align: middle;
+    }
+}
+
+.full-width {
+    width: 100%;
+}
+.full-height {
+    height: 100%;
+    min-height: 100%;
+}
+
+.inline-cnt {
+    font-size: 1px;
+    > * {
+        &:first-child {
+            margin-left: 0;
+        }
+    }
+}
+
+.fancybox__close {
+    position: absolute;
+    top:-12px;
+    right:-12px;
+    width: 20px;
+    height: 20px;
+}
+
+.fbx__close {
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAIAAAAC64paAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NUQwMUQ0MDJDQUU3MTFFMzhDRTdFQkZERUEwRkU0QjAiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NUQwMUQ0MDNDQUU3MTFFMzhDRTdFQkZERUEwRkU0QjAiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo1RDAxRDQwMENBRTcxMUUzOENFN0VCRkRFQTBGRTRCMCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo1RDAxRDQwMUNBRTcxMUUzOENFN0VCRkRFQTBGRTRCMCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pm8KAqQAAAD7SURBVHja7JO9DkRQEIXXbqWlFILoVBI6r0NoiXgCGr2fh6H1BmqhplXaE3cjsn832e02e4qbmcl8mXvP5DKWZZ0+1fn0hX4E1jStqiqO445FpHmey7JMgaMoMgyjLMudR1AUhWmacRzfNV8EQTjmbdvato0hOOu6ZlkWpKIofd+HYbgsy7GZedwzz/MAwI/juK6rJEkgfd+fpoluGJrQClIURZDDMDwlX7q9brrdjWH2mA4ThzBz3IT5R//ewYQkDjmO47ouArwfPLygwEmSENLzvHmeyfsJn6YpZVVd16mqGgQBSFLBepqm0XU9y7K9+HJV/y/5TlcBBgCTgH1idcG6oAAAAABJRU5ErkJggg==);
+    @include transition(background-image 0.2s ease);
+    &:hover {
+        text-decoration: none;
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAIAAAAC64paAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NjNGOTk0QTJDQUU3MTFFMzk5OEZFNUQ3QzY1MTMxRDMiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NjNGOTk0QTNDQUU3MTFFMzk5OEZFNUQ3QzY1MTMxRDMiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo2M0Y5OTRBMENBRTcxMUUzOTk4RkU1RDdDNjUxMzFEMyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo2M0Y5OTRBMUNBRTcxMUUzOTk4RkU1RDdDNjUxMzFEMyIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PuPhKtgAAADpSURBVHjaYrzHr8RALmBioAAME81sWuqS25Yzi4kgCwK5EpuWsKqrENAs3NPAYWUmuXkpXD+QIblpKaedpUhvEwHNrxLzft+8A7QEoh+ik1VDBSj4KjkfTTEjZjwzi4tKgh35++59hv8MrCqKQJ3P/WL+vnxNWDNU/7blrMqKQPbvuw+ee0Vg6sQd2v//A+2Ec0BcIqMK6k+ga+8+ALocaD9y+OHTjBxCzz3Dn3tFIsJPXJSAZrG5E6E6faP/vnoD9CowqCD6xeZPIqD5TWn9jyMnITohIhD9P46delvSQFRoj2ZJnAAgwABSiG/U4VpSQAAAAABJRU5ErkJggg==);
+    }
+}
+
+.full-block {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.valign-inner {
+    display: inline-block;
+    vertical-align: middle;
+}

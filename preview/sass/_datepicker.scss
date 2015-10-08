@@ -1,0 +1,187 @@
+.xdsoft_datetimepicker {
+    @include box-shadow(none);
+    border:1px solid #b6bfc9;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    padding: 0;
+}
+.xdsoft_datetimepicker .xdsoft_mounthpicker {
+    @include pie-clearfix;
+    background: #b6bfc9;
+}
+.xdsoft_datetimepicker .xdsoft_label{
+    @include myb;
+    @include font(#fff, 14px, 18px);
+    text-transform: none;
+    display: inline-block;
+    width: inherit;
+    background: #b6bfc9;
+    &.xdsoft_month {
+        margin-left: 30px;
+    }
+    > .xdsoft_select {
+        > div {
+            > .xdsoft_option {
+                color:#393939;
+                @include myreg;
+                &.xdsoft_current {
+                    background: #7da9cd;
+                    @include box-shadow(none);
+                    &:hover {
+                        background: #7da9cd;
+                        color: #fff;
+                    }
+                }
+                &:hover {
+                    background: #dee2e7;
+                    color:#393939;
+                }
+            }
+        }
+    }
+}
+
+.xdsoft_datetimepicker .xdsoft_today_button {
+    display: none;
+}
+
+.xdsoft_datetimepicker .xdsoft_prev {
+    background-image: url('/img/icon_date_prev.png');
+    margin-left: 10px;
+    @include opacity(1);
+    background-position: 50% 50%;
+    @include transition(background-image 0.3s);
+    &:hover {
+        background-image: url('/img/icon_date_prev_hover.png');
+    }
+}
+.xdsoft_datetimepicker .xdsoft_next {
+    background-image: url('/img/icon_date_next.png');
+    @include opacity(1);
+    background-position: 50% 50%;
+    @include transition(background-image 0.3s);
+    margin-right: 10px;
+    &:hover {
+        background-image: url('/img/icon_date_next_hover.png');
+    }
+}
+
+.xdsoft_datetimepicker .xdsoft_datepicker {
+    margin-left: 0;
+}
+
+.xdsoft_datetimepicker .xdsoft_calendar {
+    background: #fff;
+}
+
+.xdsoft_datetimepicker .xdsoft_calendar tr {
+    &:last-child {
+        td {
+            &:first-child {
+
+            }
+        }
+    }
+}
+
+.xdsoft_datetimepicker .xdsoft_calendar th {
+    background: #dee2e7;
+    text-transform: uppercase;
+    @include myb;
+    @include font(#7b7b7b, 10px, 1);
+    border:none;
+    text-align: center;
+}
+.xdsoft_datetimepicker .xdsoft_calendar td {
+    @include myreg;
+    background: none;
+    font-size: 12px;
+    border:none;
+    color: #393939;
+    text-align: center;
+    &:hover {
+        @include myb;
+        background: #dee2e7 !important;
+        color: #393939 !important;
+    }
+    > div {
+        padding-right: 0;
+    }
+}
+
+.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_other_month {
+    color: #393939;
+    opacity:1;
+    background: #fff;
+    &.xdsoft_disabled {
+        opacity:1;
+        color:#b5b5b5;
+    }
+}
+
+.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_disabled {
+    opacity:1;
+    color:#b5b5b5;
+    background: #fff;
+    &:hover {
+        font-family: inherit;
+        opacity:1 !important;
+        color:#b5b5b5 !important;
+        background: #fff !important;
+    }
+}
+
+
+.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_today {
+    background: #999999;
+    color:#4e4e4e;
+}
+
+.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_current {
+    background: inherit;
+    color:inherit;
+    @include box-shadow(none);
+    position: relative;
+    &:before {
+        content:'';
+        position: absolute;
+        border:3px solid #7da9cd;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+        display: block;
+        left: 0;
+        top: 0;
+    }
+    &:hover {
+        background: inherit !important;
+    }
+}
+
+.xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box >div >div {
+    background: #e6e6e6;
+    border-top: 1px solid #d9d9d9;
+    font-size: 11px;
+    &:hover {
+        background: $cBlack !important;
+        color: $cWhite !important;
+    }
+    &.xdsoft_disabled {
+        opacity:1;
+        color:#808080;
+        background: #f2f2f2;
+        &:hover {
+            opacity:1 !important;
+            color:#808080 !important;
+            background: #f2f2f2 !important;
+        }
+    }
+    &.xdsoft_current {
+        background: $cRed;
+        color:$cWhite;
+        @include box-shadow(none);
+    }
+}

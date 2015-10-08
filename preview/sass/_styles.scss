@@ -1,0 +1,264 @@
+.breadcrumbs {
+    list-style: none;
+    li {
+        &:first-child {
+            &:before {
+            }
+        }
+        &:before {
+        }
+        a {
+        }
+    }
+}
+
+h1 {
+
+}
+
+h2 {
+
+}
+
+h3 {
+
+}
+
+
+h4 {
+
+}
+
+.text-content {
+
+    >img {
+        &.full-width {
+
+        }
+    }
+    p {
+        &.figure-caption {
+
+        }
+        a {
+            &:visited {
+            }
+            &:hover {
+            }
+            &[href=""] {
+                &:hover {
+                }
+            }
+        }
+    }
+
+    mark {
+
+    }
+
+    a {
+        &[target="_blank"] {
+            &:hover {
+
+            }
+        }
+    }
+
+    blockquote {
+        cite {
+
+        }
+        &:before {
+
+        }
+    }
+    ul {
+        list-style: none;
+
+        >li {
+            &:before {
+
+            }
+            >ul {
+                >li {
+                    &:before {
+                    }
+                }
+            }
+        }
+    }
+    ol {
+        list-style: none;
+        counter-reset: cnt;
+        >li {
+            position: relative;
+            counter-increment: cnt;
+            &:before {
+                content:counter(cnt)'.';
+            }
+        }
+    }
+
+    table {
+        width: 100%;
+        th {
+            &:first-child {
+            }
+            &:last-child {
+            }
+        }
+        td {
+
+        }
+        tr {
+            &:nth-child(even) {
+                td {
+
+                }
+            }
+        }
+    }
+    .tooltip {
+        p {
+            a {
+
+            }
+        }
+    }
+}
+
+.accordeon-cnt {
+    .accordeon-item {
+        @include transition(margin-bottom 0.2s);
+        a.accordeon-trigger {
+            &:hover {
+                &:after {
+                }
+            }
+        }
+        .accordeon-inner {
+            overflow: hidden;
+            @include transition(height 0.3s);
+        }
+        .accordeon-content {
+            position: relative;
+            @include box-sizing(border-box);
+        }
+        &.expanded {
+            a.accordeon-trigger {
+                &:after {
+                }
+                &:hover {
+                    &:after {
+                    }
+                }
+            }
+        }
+        &.collapsed {
+            .accordeon-inner {
+                height: 0 !important;
+            }
+        }
+    }
+}
+
+.tabs-cnt {
+    .tabs-list {
+        li {
+            padding-left: 0;
+            margin-left: 25px;
+            margin-bottom: 0;
+            &:first-child {
+                margin-left: 0;
+            }
+            &:before {
+                display: none;
+            }
+            &.active {
+            }
+            a {
+                &:hover {
+                }
+                &.active {
+                    &:hover {
+                    }
+                }
+            }
+        }
+    }
+}
+
+.files-list {
+    a {
+        display: block;
+        position: relative;
+        &:before {
+            content:'';
+            position: absolute;
+            background-repeat: no-repeat;
+        }
+        &[href$=".doc"] {
+            &:before {
+                background-position: -200px -200px;
+            }
+        }
+        &[href$=".docx"] {
+            &:before {
+                background-position: -200px -200px;
+            }
+        }
+        &[href$=".pdf"] {
+            &:before {
+                background-position: -250px -200px;
+            }
+        }
+        &[href$=".xls"] {
+            &:before {
+                background-position: -300px -200px;
+            }
+        }
+        &[href$=".xlsx"] {
+            &:before {
+                background-position: -300px -200px;
+            }
+        }
+        &[href$=".rar"] {
+            &:before {
+                background-position: -350px -200px;
+            }
+        }
+        &[href$=".zip"] {
+            &:before {
+                background-position: -400px -200px;
+            }
+        }
+        &[href$=".7z"] {
+            &:before {
+                background-position: -400px -200px;
+            }
+        }
+        &[href$=".txt"] {
+            &:before {
+                background-position: -450px -200px;
+            }
+        }
+    }
+}
+
+.row {
+    @include pie-clearfix;
+}
+
+.col13 {
+    &.last {
+    }
+}
+
+.col23 {
+    &.last {
+    }
+}
+.col12 {
+    &.last {
+    }
+}

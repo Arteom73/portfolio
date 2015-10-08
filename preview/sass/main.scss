@@ -1,0 +1,36 @@
+@import "reset";
+@import "compass/css3";
+@import "compass/layout/sticky-footer";
+@import "fonts";
+@import "variables";
+@import "defaults";
+@import "mixins";
+@import "helpers";
+
+html {
+    height: 100%;
+}
+body {
+    background: #fff;
+    min-height: 100%;
+}
+body, input, textarea, button {
+    @include ptsans;
+}
+
+.header {
+    height: 80px;
+    background: #222222;
+    position: relative;
+    z-index: 10;
+}
+.iframe {
+    position: absolute;
+    border: 0px;
+    top: 0;
+    left: 0px;
+    padding-top: 80px;
+    width: 100%;
+    height: 100%;
+    @include box-sizing(border-box);
+}
